@@ -14,7 +14,8 @@ public class Branch {
     @Column
     private String address;
 
-//    @ManyToOne
-//    @JoinColumn(name = "id_branch")
-//    private RentalAgency rentalAgency;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_rental_agency")
+    private RentalAgency idRentalAgency;
+
 }
