@@ -16,5 +16,8 @@
     <include file="db/changelog/create_rental.sql"/>
     <include file="db/changelog/create_return.sql"/>
     <include file="db/changelog/create_revenue.sql"/>
+<!--    Remove the comments on the line below if you want to have
+        at least one entry on each table.-->
+<!--    <include file="db/changelog/create_one_of_each.sql"/>-->
 
 </databaseChangeLog>

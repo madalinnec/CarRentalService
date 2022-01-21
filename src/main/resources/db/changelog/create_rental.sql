@@ -1,8 +1,8 @@
 CREATE TABLE rental
 (
     id INT(100) PRIMARY KEY AUTO_INCREMENT,
-    id_employee INT(100),
-    id_reservation INT(100),
+    id_employee INT(100) NOT NULL,
+    id_reservation INT(100) NOT NULL,
     comments VARCHAR(300), #if the customer was rude, mention here.
 
     FOREIGN KEY (id_employee) REFERENCES employee(id),
