@@ -1,4 +1,4 @@
-INSERT IGNORE INTO rental_agency
+INSERT INTO rental_agency
     (id, name, internet_domain, contact_address, owner)
     VALUES
     (
@@ -7,15 +7,6 @@ INSERT IGNORE INTO rental_agency
         'bestcars.ro',
         'contact@bestcars.ro',
         'Madalin Neculaes'
-    );
-
-INSERT IGNORE INTO branch
-    (id, address, id_rental_agency)
-    VALUES
-    (
-        1,
-        'Iasi, Str. Tudor Neculai, Nr. 3A',
-        1
     );
 
 INSERT IGNORE INTO employee

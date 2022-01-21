@@ -1,5 +1,6 @@
 package com.project.carrentalservice.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -14,8 +15,9 @@ public class Branch {
     @Column
     private String address;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne //(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_rental_agency")
-    private RentalAgency idRentalAgency;
+//    @JsonIgnore //ignores this from the json file when using GET
+    private RentalAgency rentalAgency;
 
 }

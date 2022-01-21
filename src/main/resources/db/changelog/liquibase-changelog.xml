@@ -19,5 +19,6 @@
 <!--    Remove the comments on the line below if you want to have
         at least one entry on each table.-->
 <!--    <include file="db/changelog/create_one_of_each.sql"/>-->
+<!--    <include file="db/changelog/insert_branch.sql"/>-->
 
 </databaseChangeLog>

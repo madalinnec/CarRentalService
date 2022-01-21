@@ -1,5 +1,6 @@
 package com.project.carrentalservice.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,7 +11,6 @@ import java.util.List;
 public class RentalAgency {
 
     @Id
-    @GeneratedValue()
     private int id;
 
     @Column
@@ -25,4 +25,7 @@ public class RentalAgency {
     @Column
     private String owner;
 
+    @OneToMany(mappedBy = "rentalAgency")
+    @JsonIgnore
+    private List<Branch> branches;
 }
