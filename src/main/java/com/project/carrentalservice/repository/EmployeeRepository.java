@@ -1,11 +1,9 @@
 package com.project.carrentalservice.repository;
 
-import com.project.carrentalservice.domain.Branch;
+import com.project.carrentalservice.domain.Employee;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface BranchRepository extends JpaRepository<Branch, Integer> {
-
-
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 }

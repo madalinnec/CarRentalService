@@ -1,10 +1,9 @@
 package com.project.carrentalservice.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -24,4 +23,8 @@ public class Customer {
 
     @Column
     private String address;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = {"customer", "handler","hibernateLazyInitializer"}, allowSetters = true)
+    private List<Reservation> reservations;
 }

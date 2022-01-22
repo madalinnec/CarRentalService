@@ -1,8 +1,7 @@
 package com.project.carrentalservice.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -25,7 +24,7 @@ public class RentalAgency {
     @Column
     private String owner;
 
-    @OneToMany(mappedBy = "rentalAgency")
-    @JsonIgnore
+    @OneToMany(mappedBy = "rentalAgency", cascade = CascadeType.ALL, fetch = FetchType.LAZY)//CascadeType.ALL - removes all the entries related to this,if this gets deleted
+    @JsonIgnoreProperties(value = {"rentalAgency", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private List<Branch> branches;
 }

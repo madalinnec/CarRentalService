@@ -19,12 +19,12 @@ public class RentalAgencyController {
         this.rentalAgencyService = rentalAgencyService;
     }
 
-    @GetMapping("/rentalAgency")
+    @GetMapping("/rentalAgencies")
     public List<RentalAgency> getRentalAgenciesList(){
         return rentalAgencyService.returnRentalAgencies();
     }
 
-    @PostMapping("/rentalAgency")
+    @PostMapping("/rentalAgency/create")
     public void createRentalAgency(@RequestBody RentalAgency rentalAgency){ //RequestBody - used when we want to send a json file to the database
         rentalAgencyService.createRentalAgency(rentalAgency);
     }
@@ -39,7 +39,7 @@ public class RentalAgencyController {
         return null;
     }
 
-    @DeleteMapping("/rentalAgency/{id}")
+    @DeleteMapping("/rentalAgency/delete/{id}")
     public void deleteRentalAgencyById(@PathVariable int id){
         rentalAgencyService.deleteRentalAgency(id);
     }

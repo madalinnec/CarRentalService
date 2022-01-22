@@ -1,12 +1,10 @@
 package com.project.carrentalservice.service;
 
 import com.project.carrentalservice.domain.Branch;
-import com.project.carrentalservice.domain.RentalAgency;
 import com.project.carrentalservice.exception.EntityNotFoundException;
 import com.project.carrentalservice.repository.BranchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -42,10 +40,5 @@ public class BranchServiceImpl implements BranchService{
     @Override
     public void deleteBranchById(int id) {
         branchRepository.deleteById(id);
-    }
-
-    @Override
-    public RentalAgency getRentalAgencyByBranchId(int id) {
-        return branchRepository.getRentalAgencyById(id);
     }
 }

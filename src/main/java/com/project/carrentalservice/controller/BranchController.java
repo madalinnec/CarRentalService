@@ -1,7 +1,6 @@
 package com.project.carrentalservice.controller;
 
 import com.project.carrentalservice.domain.Branch;
-import com.project.carrentalservice.domain.RentalAgency;
 import com.project.carrentalservice.exception.EntityNotFoundException;
 import com.project.carrentalservice.service.BranchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,23 +23,18 @@ public class BranchController {
         return branchService.getBranchById(id);
     }
 
-    @GetMapping("/branch")
+    @GetMapping("/branches")
     public List<Branch> getAllBranches(){
         return branchService.getAllBranches();
     }
 
-    @PostMapping("/branch")
+    @PostMapping("/branch/create")
     public void createBranch(@RequestBody Branch branch){
         branchService.createBranch(branch);
     }
 
-    @DeleteMapping("/branch/{id}")
+    @DeleteMapping("/branch/delete/{id}")
     public void deleteBranchById(@PathVariable int id){
         branchService.deleteBranchById(id);
-    }
-
-    @GetMapping("/branch/rentalAgency/{id}")
-    public RentalAgency getRentalAgencyByBranchId(@PathVariable int id){
-        return branchService.getRentalAgencyByBranchId(id);
     }
 }

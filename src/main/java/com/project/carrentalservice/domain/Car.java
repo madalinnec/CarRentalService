@@ -1,8 +1,9 @@
 package com.project.carrentalservice.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
-
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -38,5 +39,10 @@ public class Car {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_branch")
+    @JsonIgnoreProperties(value = {"cars", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private Branch idBranch;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JsonIgnoreProperties(value = {"car", "handler","hibernateLazyInitializer"}, allowSetters = true)
+    private List<Car> cars;
 }
