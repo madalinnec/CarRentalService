@@ -24,13 +24,13 @@ public class Employee {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_branch")
     @JsonIgnoreProperties(value = {"employees", "handler","hibernateLazyInitializer"}, allowSetters = true)
-    private Branch idBranch;
+    private Branch branch;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "employee",fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"employee", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private List<Rental> rentals;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"employee", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private List<Return> returns;
 }

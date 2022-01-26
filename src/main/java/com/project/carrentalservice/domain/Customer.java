@@ -24,7 +24,7 @@ public class Customer {
     @Column
     private String address;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"customer", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private List<Reservation> reservations;
 }

@@ -22,15 +22,15 @@ public class Branch {
     //@JsonIgnoreProperties - ignores the property "branches" in rentalAgency to avoid an infinite loop
     private RentalAgency rentalAgency;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "branch", fetch = FetchType.LAZY) //add mappedBy in other entities for OneToMany
     @JsonIgnoreProperties(value = {"idBranch", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private List<Employee> employees;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "branch", fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"branch", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private List<Car> cars;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "branch", fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"branch", "handler","hibernateLazyInitializer"}, allowSetters = true)
     private List<Reservation> reservations;
 }

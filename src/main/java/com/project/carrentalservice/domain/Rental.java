@@ -14,7 +14,7 @@ public class Rental {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"rentals", "handler","hibernateLazyInitializer"}, allowSetters = true)
     @JoinColumn(name = "id_employee")
-    private Employee idEmployee;
+    private Employee employee;
 
     @OneToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"rental", "handler","hibernateLazyInitializer"}, allowSetters = true)

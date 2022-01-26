@@ -14,7 +14,7 @@ public class Reservation {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"reservations", "handler","hibernateLazyInitializer"}, allowSetters = true)
     @JoinColumn(name = "id_customer")
-    private Customer idCustomer;
+    private Customer customer;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"reservations", "handler","hibernateLazyInitializer"}, allowSetters = true)
@@ -33,12 +33,12 @@ public class Reservation {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"reservations", "handler","hibernateLazyInitializer"}, allowSetters = true)
     @JoinColumn(name = "id_branch")
-    private Branch idBranch;
+    private Branch branch;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"reservations", "handler","hibernateLazyInitializer"}, allowSetters = true)
     @JoinColumn(name = "id_return_branch")
-    private Branch idReturnBranch;
+    private Branch returnBranch;
 
     @Column
     private double price;

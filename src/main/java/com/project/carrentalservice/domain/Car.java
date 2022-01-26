@@ -40,9 +40,5 @@ public class Car {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_branch")
     @JsonIgnoreProperties(value = {"cars", "handler","hibernateLazyInitializer"}, allowSetters = true)
-    private Branch idBranch;
-
-    @OneToMany(fetch = FetchType.LAZY)
-    @JsonIgnoreProperties(value = {"car", "handler","hibernateLazyInitializer"}, allowSetters = true)
-    private List<Car> cars;
+    private Branch branch;
 }

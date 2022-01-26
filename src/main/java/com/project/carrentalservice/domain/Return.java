@@ -14,7 +14,7 @@ public class Return {
     @ManyToOne(fetch = FetchType.LAZY)
     @JsonIgnoreProperties(value = {"returns", "handler","hibernateLazyInitializer"}, allowSetters = true)
     @JoinColumn(name = "id_employee")
-    private Employee idEmployee;
+    private Employee employee;
 
     @Column(name = "return_date")
     private String returnDate;
