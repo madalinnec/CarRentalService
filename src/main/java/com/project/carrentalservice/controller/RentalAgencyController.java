@@ -4,12 +4,12 @@ import com.project.carrentalservice.domain.RentalAgency;
 import com.project.carrentalservice.exception.EntityNotFoundException;
 import com.project.carrentalservice.service.RentalAgencyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/rentalAgency")
 public class RentalAgencyController {
 
     private final RentalAgencyService rentalAgencyService;
@@ -19,17 +19,17 @@ public class RentalAgencyController {
         this.rentalAgencyService = rentalAgencyService;
     }
 
-    @GetMapping("/rentalAgencies")
+    @GetMapping("/all")
     public List<RentalAgency> getRentalAgenciesList(){
         return rentalAgencyService.returnRentalAgencies();
     }
 
-    @PostMapping("/rentalAgency/create")
+    @PostMapping("/create")
     public void createRentalAgency(@RequestBody RentalAgency rentalAgency){ //RequestBody - used when we want to send a json file to the database
         rentalAgencyService.createRentalAgency(rentalAgency);
     }
 
-    @GetMapping("/rentalAgency/{id}")
+    @GetMapping("/get/{id}")
     public RentalAgency getRentalAgencyById(@PathVariable int id){//PathVariable - takes the id we provide
         try{
             return rentalAgencyService.returnRentalAgencyById(id);
@@ -39,7 +39,7 @@ public class RentalAgencyController {
         return null;
     }
 
-    @DeleteMapping("/rentalAgency/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteRentalAgencyById(@PathVariable int id){
         rentalAgencyService.deleteRentalAgency(id);
     }

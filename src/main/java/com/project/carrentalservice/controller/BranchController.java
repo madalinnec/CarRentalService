@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/branch")
 public class BranchController {
 
     private final BranchService branchService;
@@ -18,22 +19,22 @@ public class BranchController {
         this.branchService = branchService;
     }
 
-    @GetMapping("/branch/{id}")
+    @GetMapping("/get/{id}")
     public Branch getBranchById(@PathVariable int id) throws EntityNotFoundException {
         return branchService.getBranchById(id);
     }
 
-    @GetMapping("/branches")
+    @GetMapping("/all")
     public List<Branch> getAllBranches(){
         return branchService.getAllBranches();
     }
 
-    @PostMapping("/branch/create")
+    @PostMapping("/create")
     public void createBranch(@RequestBody Branch branch){
         branchService.createBranch(branch);
     }
 
-    @DeleteMapping("/branch/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteBranchById(@PathVariable int id){
         branchService.deleteBranchById(id);
     }

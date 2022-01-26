@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmployeeImpl implements EmployeeService{
+public class EmployeeServiceImpl implements EmployeeService{
 
     private final EmployeeRepository employeeRepository;
 
     @Autowired
-    public EmployeeImpl(EmployeeRepository employeeRepository){
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository){
         this.employeeRepository = employeeRepository;
     }
 
