@@ -7,8 +7,8 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd
         http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-3.8.xsd">
 
-    <include file="db/changelog/create_branch.sql"/>
     <include file="db/changelog/create_rental_agency.sql"/>
+    <include file="db/changelog/create_branch.sql"/>
     <include file="db/changelog/create_employee.sql"/>
     <include file="db/changelog/create_car.sql"/>
     <include file="db/changelog/create_customer.sql"/>
@@ -16,5 +16,16 @@
     <include file="db/changelog/create_rental.sql"/>
     <include file="db/changelog/create_return.sql"/>
     <include file="db/changelog/create_revenue.sql"/>
+<!--    Remove the comments on the line below if you want to have
+        at least one entry on each table.-->
+<!--    <include file="db/changelog/insert_rental_agency.sql"/>-->
+<!--    <include file="db/changelog/insert_branch.sql"/>-->
+<!--    <include file="db/changelog/insert_employee.sql"/>-->
+<!--    <include file="db/changelog/insert_car.sql"/>-->
+<!--    <include file="db/changelog/insert_customer.sql"/>-->
+<!--    <include file="db/changelog/insert_reservation.sql"/>-->
+<!--    <include file="db/changelog/insert_rental.sql"/>-->
+<!--    <include file="db/changelog/insert_return.sql"/>-->
+<!--    <include file="db/changelog/insert_revenue.sql"/>-->
 
 </databaseChangeLog>

@@ -19,6 +19,15 @@ public class DbConfiguration {
                 .password("user")
                 .build();
     }
+    /*
+    Create the schema:
+    CREATE DATABASE car_rental_service;
+
+    Create the same user and give him access to the schema:
+    CREATE USER 'user'@'localhost' IDENTIFIED BY 'user';
+    GRANT ALL PRIVILEGES ON car_rental_service.* TO 'user'@'localhost';
+    FLUSH PRIVILEGES;
+     */
 
     @Bean
     public SpringLiquibase getSpringLiquibase(){

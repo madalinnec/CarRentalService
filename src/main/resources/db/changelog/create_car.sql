@@ -9,6 +9,6 @@ CREATE TABLE car
     mileage INT(30) NOT NULL,
     status VARCHAR(30) NOT NULL,
     amount DOUBLE(60, 2) NOT NULL,
-    id_branch INT(30),
+    id_branch INT(30) NOT NULL,
     FOREIGN KEY (id_branch) REFERENCES branch(id)
 )
